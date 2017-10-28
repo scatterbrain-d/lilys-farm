@@ -123,7 +123,7 @@ function makeAnimal(animal){
     var animalPic = document.createElement("img");
     var image = animal.image;
     var name = animal.name;
-    main.append(animalPic);
+    main.appendChild(animalPic);
     animalPic.src = image;
     animalPic.classList.add(name);
     animalPic.classList.add("hide");
@@ -143,7 +143,6 @@ function grinder(ele){
 //reacts to click
 function react(event){
     var animalPic = event.target;
-    console.log(event);
     //reference object with which element was created
     if (animalPic.nodeName === "IMG"
         && animalPic.className.includes("run")) {
@@ -205,7 +204,7 @@ function screenCheck(){
 function showButton(){
     if (window.innerWidth > window.innerHeight) {
     message.style.display = "none";
-    gameMode.forEach(function(button){
+    Array.prototype.forEach.call(gameMode, function(button){ //forEach workaround for Edge compatibility
         button.style.display = "inline-block";
         });
     }
@@ -214,19 +213,23 @@ function showButton(){
 bgm.play();
 screenCheck();
 
-//listener for window resize
+// listener for window resize
 window.addEventListener("resize", showButton);
 
 // background music toggle
 sound.addEventListener("click", togglePlay);
 
-// listener for game difficulty selection
-gameMode.forEach(function(button){
+// listener for game difficulty selection, forEach workaround for Edge compatibility
+Array.prototype.forEach.call(gameMode, function(button){
     button.addEventListener("click", chooseGame);
 });
 
-//listener for click on moving animal elements
+// gameMode.forEach(function(button){
+//     button.addEventListener("click", chooseGame);
+// });
+
+// listener for click on moving animal elements
 main.addEventListener("click", react);
 
-//listener for quit button
+// listener for quit button
 back.addEventListener("click", quit);
