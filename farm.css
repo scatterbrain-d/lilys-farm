@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Irish Grover', cursive;
+}
+
+/* ****** TITLE SCREEN ****** */
+#titlescreen {
+    position: fixed;
+    text-align: center;
+    height: 100%;
+    width: 80%;
+    margin: 0 10%;
+    z-index: 2;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    background: blue;
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+    border: 4px dashed white;
+    box-shadow: 0 0 0 8px blue;
+    width: 50%;
+    margin: 1em auto;
+    box-sizing: border-box;
+}
+
+.difficulty {
+    display: inline-block;
+    margin: 0 1.5em;
+    color: white;
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+    border: 4px dashed white;
+}
+
+.easy {
+    background: gold;
+    box-shadow: 0 0 0 8px gold;
+}
+
+.hard {
+    background: red;
+    box-shadow: 0 0 0 8px red;
+}
+
+/*Message to rotate device to landscape mode on mobile*/
+#message {
+    display: none;
+    background: blue;
+    box-shadow: 0 0 0 8px blue;
+    margin: 0 1.5em;
+    color: white;
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+    border: 4px dashed white;
+}
+
+/* ****** IN-GAME DISPLAYS ****** */
+#main {
+    height: 100vh;
+    width: 100%;
+    background: url("images/barn2.png") center center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+h2, h4 {
+    margin: 0.2em;
+    color: white;
+    background: red;
+    padding: 0.1em;
+    border-radius: 0.1em;
+    border: 2px dashed white;
+    box-shadow: 0 0 0 4px red;
+    min-width: 1em;
+    text-align: center;
+}
+
+.flexbar {
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+#namespace {
+    margin-top: 1em;
+    text-align: center;
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+    border: 4px dashed;
+    box-shadow: 0 0 0 8px;
+    opacity: 0;
+}
+
+#label {margin:0;}
+
+#quit {
+    float: left;
+    opacity: 0;
+    background: fuchsia;
+    box-shadow: 0 0 0 4px fuchsia;
+}
+
+#sound {
+    float: left;
+    background: fuchsia;
+    box-shadow: 0 0 0 4px fuchsia;
+    z-index: 1000;
+}
+
+#score {
+    float: right;
+    opacity: 0;
+}
+
+/* ****** ANIMALS ****** */
+img {
+    position: absolute;
+    bottom: 10vh;
+    height: auto;
+    max-width: 40%;
+}
+
+.hide {
+    transform: translateX(-100%);
+}
+
+.run {
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-name: bounce;
+    animation-iteration-count: 1;
+}
+
+@keyframes bounce {
+     0% {transform: translateX(-100%) rotate(10deg);}
+    10% {transform: translateX(0%) rotate(-10deg);}
+    20% {transform: translateX(100%) rotate(10deg);}
+    30% {transform: translateX(200%) rotate(-10deg);}
+    40% {transform: translateX(300%) rotate(10deg);}
+    50% {transform: translateX(400%) rotate(-10deg);}
+    60% {transform: translateX(500%) rotate(10deg);}
+    70% {transform: translateX(600%) rotate(-10deg);}
+    80% {transform: translateX(700%) rotate(10deg);}
+    90% {transform: translateX(800%) rotate(-10deg);}
+    100% {transform: translateX(900%) rotate(10deg);}
+}
+
+.clicked {
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-name: blastoff;
+}
+
+@keyframes blastoff {
+    35% {transform: translate(0%, 0%) rotate(360deg);}
+    50% {transform: translate(500%, -400%) rotate(720deg);}
+    100%{transform: translate(500%, -400%) rotate(720deg);}
+}

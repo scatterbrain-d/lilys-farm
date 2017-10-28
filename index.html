@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=0">
+  
+  <title>Lily's Ark</title>
+  
+  <link href='https://fonts.googleapis.com/css?family=Irish+Grover'
+        rel='stylesheet'
+        type='text/css'>
+  <link rel="stylesheet"
+        href="farm.css">
+</head>
+<body>
+    
+    <div id="titlescreen"> <!--Title screen is hidden after a game mode is selected-->
+        <h1 id="title">LILY'S FARM</h1>
+        <h3 class="difficulty easy">Easy</h3>
+        <h3 class="difficulty hard">Hard</h3>
+        <h3 id="message">Please turn your device sideways to play!</h3>
+    </div>
+
+    <div id="main">
+        <h4 id="sound">🔊</h4>  <!-- background music toggle -->
+        <h4 id="quit">Quit</h4> <!--Ends game and returns to title screen-->
+        <h2 id="score">15</h2>  <!--Score display-->
+        <div class="flexbar">
+           <div id="namespace">
+               <h1 id="label"></h1> <!--Displays clicked animal name-->
+           </div>
+        </div>
+    </div>
+    
+    <script src="farm.js"></script>
+</body>
+</html>
